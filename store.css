@@ -1,0 +1,151 @@
+/* Adjust carousel image size for the first carousel */
+.carousel-inner .carousel-item img.cookbook {
+    width: 60%; /* Adjust to your desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 5px solid rgb(86, 85, 85);
+    border-radius: 20px;
+}
+
+/* Adjust carousel image size for the second carousel */
+.carousel-inner .carousel-item img.cookbook-course {
+    width: 100%; /* Adjust to your desired width */
+    height: 100%; /* Maintain aspect ratio */
+}
+
+/* Optional: Control the height of the carousel for better visual appeal */
+.carousel {
+    max-height: 1500px; /* Set to your desired height */
+    overflow: hidden;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 5px solid rgb(153, 0, 0);
+}
+
+.car2 {
+    max-height: 500px; /* Set to your desired height */
+    border-radius: 20px;
+    border: 5px solid blue;
+}
+
+/* Optional: Add some margin or padding for better spacing */
+.card-body {
+    margin-top: 20px;
+}
+
+.text-start p {
+    font-family: "Playwrite FR Moderne", cursive;
+    font-optical-sizing: auto;
+    font-weight: 50px;
+    font-style: normal;
+    color: rgb(139, 150, 159);
+  }
+
+.extra-font {
+    font-family: "Matemasie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+ 
+/* buybooks 1*/
+.buybooks {
+    border-radius: 4px;
+    background-color: red;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 60%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 60px;
+    margin-left: 20%;
+    border-color: red;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 5px;
+  }
+
+  .buybooks:hover {
+    background-color: #e7dd4d;
+    color: rgb(60, 183, 187);
+  }
+  
+  .buybooks span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .buybooks span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.2s;
+  }
+  
+  .buybooks:hover span {
+    padding-right: 25px;
+  }
+  
+  .buybooks:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  /* buybooks 2*/
+.registercourse {
+    border-radius: 4px;
+    background-color: blue;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 60%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 60px;
+    margin-left: 20%;
+    border-color: blue;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 5px;
+  }
+
+  .registercourse:hover {
+    background-color: #11a25a;
+    color: rgb(33, 89, 91);
+  }
+  
+  .registercourse span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .registercourse span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.2s;
+  }
+  
+  .registercourse:hover span {
+    padding-right: 25px;
+  }
+  
+  .registercourse:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+

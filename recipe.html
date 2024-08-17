@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Page - I'm Cooked</title>
+  <link rel="icon" type="image/x-icon" href="favicon.jpeg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="recipe.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="btop.css">
+  <link rel="stylesheet" href="footers.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html"><img class="logo" src="logo.jpeg" alt="I'M COOKED!"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item box">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="recipe.html">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tips.html">Tips</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feedback.html">Feedback</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us</a>
+          </li>
+
+        </ul>
+        <!--INSERT PREFERENCE SETTING-->
+        <div class="row justify-content-center mt-4 toggledarklight">
+          <input type="checkbox" class="checkbox" id="checkbox">
+          <label for="checkbox" class="checkbox-label">
+            <i class="bi bi-moon-stars"></i>
+            <i class="bi bi-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cookieconsent2" tabindex="-1" aria-labelledby="cookieconsentLabel2" aria-hidden="true"
+      data-mdb-backdrop="static" data-mdb-keyboard="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="cookieconsentLabel2">Cookies & Privacy</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-3 d-flex align-items-center justify-content-center">
+                <i class="bi bi-cookie h1 text-primary"></i>
+              </div>
+
+              <div class="col-9">
+                <p>This website uses cookies to ensure you get the best experience on our website.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="rejectBtn" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary"
+              data-mdb-dismiss="modal">Reject</button>
+            <button type="button" id="acceptBtn" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary"
+              data-mdb-dismiss="modal">
+              Accept
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+  </nav>
+
+
+
+  <div class="title">
+    <h2 class="selection recipe-desc-title all">MALAYSIAN CUISINE</h2>
+    <h2 class="selection recipe-desc-title malay">MALAY CUISINE</h2>
+    <h2 class="selection recipe-desc-title chinese">CHINESE CUISINE</h2>
+    <h2 class="selection recipe-desc-title indian">INDIAN CUISINE</h2>
+    <img class="star-active selection starred" src="https://cdn-icons-png.flaticon.com/128/1828/1828614.png">
+    <h2 class="selection recipe-desc-title starred">ADD TO FAVOURITE</h2>
+    <img class="star-active selection starred" src="https://cdn-icons-png.flaticon.com/128/1828/1828614.png">
+  </div>
+
+
+
+  <div class="recipeDescription">
+    <img class="selection all" src="https://static.wanderon.in/wp-content/uploads/2024/04/cuisines-of-malaysia.jpg"
+      alt="Malaysian Food!">
+    <img class="selection malay" src="https://malay-cuisines.neocities.org/intro.jpg" alt="Malay Food!">
+    <img class="selection chinese"
+      src="https://images-cdn.welcomesoftware.com/Zz0zMDM2ZWM5NmQ5YjAxMWViODcwYmI5NWUzYmNlYzM0NA==/Zz01NTg2OGYyMmQ4MmYxMWViOGM4NjRkNDA4MzFmNzQ4OA%3D%3D.jpg"
+      alt="Chinese Food!">
+    <img class="selection indian"
+      src="https://royalmahal.co.uk/wp-content/uploads/2023/01/indian-restaurant-scaled-e1670322083921.jpg"
+      alt="Indian Food!">
+    <img class="selection starred"
+      src="https://res.cloudinary.com/hz3gmuqw6/image/upload/c_fill,h_450,q_auto,w_710/f_auto/learn-to-cook-like-a-chef-phpmHibi5"
+      alt="Add to Favourite!">
+  </div>
+
+  <div class="recipeIntro">
+    <p class="selection all">Malaysian cuisine is a delightful blend of various culinary traditions, reflecting the
+      country’s rich cultural
+      diversity. It is characterized by its vibrant flavors, often achieved through the use of aromatic spices, herbs,
+      and fresh ingredients. Malaysian food is influenced by Malay, Chinese, Indian, and indigenous cuisines,
+      resulting
+      in a mouth-watering array of dishes. From spicy curries to savory noodle dishes and sweet desserts, Malaysian
+      cuisine offers a unique and unforgettable culinary experience.</p>
+    <p class="selection malay">Malay cuisine is the traditional food of the Malay people, known for its rich and
+      flavorful dishes. It is heavily influenced by the use of spices like turmeric, ginger, lemongrass, and chili,
+      creating aromatic and often spicy flavors. Coconut milk is a staple in many Malay dishes, providing a creamy
+      richness to curries, soups, and desserts. Signature dishes like Nasi Lemak, Rendang, and Satay highlight the
+      deep
+      and complex flavors that make Malay cuisine so beloved.</p>
+    <p class="selection chinese">Chinese cuisine is one of the world’s most popular and diverse culinary traditions,
+      known
+      for its balance of flavors, textures, and colors. It emphasizes the use of fresh ingredients, such as
+      vegetables,
+      meat, seafood, and tofu, combined with aromatic spices and sauces. Chinese cooking techniques, like stir-frying,
+      steaming, and braising, help to preserve the natural flavors and nutrients of the ingredients. With regional
+      specialties like Cantonese dim sum, Szechuan spicy dishes, and Hokkien noodles, Chinese cuisine is a delightful
+      exploration of tastes.</p>
+    <p class="selection indian">Indian cuisine is renowned for its vibrant and diverse flavors, which vary
+      significantly
+      across regions. It is characterized by the extensive use of spices and herbs, creating a wide range of aromatic
+      and flavorful dishes. Indian food includes vegetarian and non-vegetarian options, with staples like rice,
+      lentils,
+      and bread such as naan and roti. Whether it's the rich and creamy curries of North India, the spicy and tangy
+      flavors of South India, or the sweet and savory street foods, Indian cuisine offers a rich culinary experience.
+    </p>
+    <p class="selection starred">
+      The "Favourites" section is a curated selection of beloved dishes that hold a special place in the hearts of
+      many.
+      These dishes, cherished for their comforting flavors and nostalgic appeal, represent the best of what each
+      cuisine
+      has to offer. From timeless classics to modern interpretations, this collection highlights the most popular and
+      frequently requested dishes, making it a perfect choice for those seeking tried-and-true culinary delights.
+      Whether you're indulging in a personal favorite or exploring a new one, these dishes are sure to satisfy your
+      cravings.
+    </p>
+  </div>
+
+
+  <!--RECIPES-->
+  <div class="recipeDisplay">
+    <div class="nav nav-tabs " id="nav-tab" role="tablist">
+      <button class="nav-link active recipe fw-bold" value="all" id="nav-ALL-tab" data-bs-toggle="tab"
+        data-bs-target="#nav-ALL" type="button" role="tab" aria-controls="nav-ALL" aria-selected="true">ALL</button>
+
+      <button class="nav-link recipe text-success fw-bold" value="malay" id="nav-Malay-Cuisine-tab" data-bs-toggle="tab"
+        data-bs-target="#nav-Malay-Cuisine" type="button" role="tab" aria-controls="nav-Malay-Cuisine"
+        aria-selected="false">Malay Cuisine</button>
+
+
+
+      <button class="nav-link recipe text-warning fw-bold" value="chinese" id="nav-Chinese-Cuisine-tab"
+        data-bs-toggle="tab" data-bs-target="#nav-Chinese-Cuisine" type="button" role="tab"
+        aria-controls="nav-Chinese-Cuisine" aria-selected="false">Chinese Cuisine</button>
+
+
+
+      <button class="nav-link recipe text-primary fw-bold" value="indian" id="nav-Indian-Cuisine-tab"
+        data-bs-toggle="tab" data-bs-target="#nav-Indian-Cuisine" type="button" role="tab"
+        aria-controls="nav-Indian-Cuisine" aria-selected="false">Indian Cuisine</button>
+
+
+      <button class="nav-link recipe favourite float-right text-warning" value="starred" id="nav-starred-tab"
+        data-bs-toggle="tab" data-bs-target="#nav-starred" type="button" role="tab" aria-controls="nav-starred"
+        aria-selected="false">
+        <i class="bi bi-star-fill "></i></button>
+    </div>
+
+    <div class="tab-content" id="nav-tabContent">
+
+      <!--Malaysian cuisine(ALL)
+      <span class="badge text-bg-success text-black">Malay</span>
+      <span class="badge text-bg-warning text-black">Chinese</span>
+      <span class="badge text-bg-primary text-black">Indian</span>
+      <span class="badge text-bg-danger text-black">Hard</span>
+      <span class="badge text-bg-secondary text-black">Intermediate</span>
+      <span class="badge text-bg-info text-black">Easy</span> 
+      
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star-fill"></i>
+    -->
+
+      <div class="tab-pane fade show active" id="nav-ALL" role="tabpanel" aria-labelledby="nav-ALL-tab" tabindex="0">
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes nasi-lemak"
+          value="nasi-lemak">
+          <span class="align-top recipe-title">NASI LEMAK</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.seriouseats.com/thmb/jurw_XoUko0sLM17lhIWseKvsyM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230309-NasiLemak-MichelleYip-Option1-8d0b9468c998495f91ef4ff6d3b5ab6b.jpg"
+              alt="Nasi Lemak">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Fragrant coconut rice served with sambal, fried crispy anchovies, roasted peanuts, boiled egg, and
+                cucumber.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>30 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes kuey-teow" value="kuey-teow">
+          <span class="align-top recipe-title">CHAR KUEY TEOW</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg"
+              alt="Char Kuey Teow">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Stir-fried flat rice noodles with prawns, eggs, and bean sprouts in a savory soy sauce.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>20 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes rojak" value="rojak">
+          <span class="align-top recipe-title">ROJAK</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://apicms.mstar.com.my/uploads/images/2023/10/02/2312962.jpg" alt="Rojak">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A tangy and spicy fruit and vegetable salad with a sweet, savory sauce.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 minutes</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes cendol" value="cendol">
+          <span class="align-top recipe-title">CENDOL</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://cdn1.npcdn.net/images/170188161551eed7afcbdbd187082c098cbc45351c.webp?md5id=f31c62b1be87ee00a16b9e51482263a7&new_width=1000&new_height=1000&size=max&w=-62170008925&from=png"
+              alt="Cendol">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A refreshing dessert with shaved ice, coconut milk, and sweet palm sugar syrup.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 minutes</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes dumpling" value="dumpling">
+          <span class="align-top recipe-title">DUMPLING</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/98/34/5/miRF3sziTM6PBzAJlBCx_dumplings-1.jpg"
+              alt="Dumpling">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Steamed or fried dough pockets filled with a mixture of meat, vegetables, and seasonings.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>15 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes biryani" value="biryani">
+          <span class="align-top recipe-title">BIRYANI</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-danger text-black">Hard</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://glebekitchen.com/wp-content/uploads/2019/12/chickenbiryanibowltop-500x375.jpg" alt="Biryani">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A fragrant rice dish with layers of spiced meat or vegetables, and aromatic herbs.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>45 minutes - 1 hour</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes chicken-tikka-masala"
+          value="chicken-tikka-masala">
+          <span class="align-top recipe-title">Chicken Tikka Masala</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG"
+              alt="Chicken Tikka Masala">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Grilled chicken pieces in a rich and creamy tomato-based sauce with spices.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>45 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes youtiao" value="youtiao">
+          <span class="align-top recipe-title">YOU TIAO</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://asianinspirations.com.au/wp-content/uploads/2021/05/R02741-Chinese-Fried-Dough-(Youtiao)2.jpg"
+              alt="You Tiao">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Crispy, deep-fried Chinese dough sticks, typically served with soy milk or congee.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>20 - 30 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes roti-canai"
+          value="roti-canai">
+          <span class="align-top recipe-title">ROTI CANAI</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://www.rotinrice.com/wp-content/uploads/2011/04/RotiCanai-1.jpg"
+              alt="Roti Canai">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A flaky, buttery Malaysian flatbread with a crisp texture, often enjoyed with curry or dhal.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 - 15 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes rendang" value="rendang">
+          <span class="align-top recipe-title">RENDANG</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-danger text-black">Hard</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.astronauts.id/blog/wp-content/uploads/2023/03/Resep-Rendang-Daging-Sapi-Untuk-Lebaran-Gurih-dan-Nikmat-1024x683.jpg"
+              alt="Rendang">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Rendang is a flavorful, slow-cooked beef stew made with coconut milk and a blend of spices, resulting
+                in tender, aromatic meat.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>2.5 - 3 hours</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+
+
+      <!--Malay Cuisine-->
+      <div class="tab-pane fade" id="nav-Malay-Cuisine" role="tabpanel" aria-labelledby="nav-Malay-Cuisine-tab"
+        tabindex="0">
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes nasi-lemak"
+          value="nasi-lemak">
+          <span class="align-top recipe-title">NASI LEMAK</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.seriouseats.com/thmb/jurw_XoUko0sLM17lhIWseKvsyM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230309-NasiLemak-MichelleYip-Option1-8d0b9468c998495f91ef4ff6d3b5ab6b.jpg"
+              alt="Nasi Lemak">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Fragrant coconut rice served with sambal, fried crispy anchovies, roasted peanuts, boiled egg, and
+                cucumber.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>30 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes rojak" value="rojak">
+          <span class="align-top recipe-title">ROJAK</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://apicms.mstar.com.my/uploads/images/2023/10/02/2312962.jpg" alt="Rojak">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A tangy and spicy fruit and vegetable salad with a sweet, savory sauce.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 minutes</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes cendol" value="cendol">
+          <span class="align-top recipe-title">CENDOL</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://cdn1.npcdn.net/images/170188161551eed7afcbdbd187082c098cbc45351c.webp?md5id=f31c62b1be87ee00a16b9e51482263a7&new_width=1000&new_height=1000&size=max&w=-62170008925&from=png"
+              alt="Cendol">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A refreshing dessert with shaved ice, coconut milk, and sweet palm sugar syrup.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes rendang" value="rendang">
+          <span class="align-top recipe-title">RENDANG</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-danger text-black">Hard</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.astronauts.id/blog/wp-content/uploads/2023/03/Resep-Rendang-Daging-Sapi-Untuk-Lebaran-Gurih-dan-Nikmat-1024x683.jpg"
+              alt="Rendang">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Rendang is a flavorful, slow-cooked beef stew made with coconut milk and a blend of spices, resulting
+                in tender, aromatic meat.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>2.5 - 3 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+      </div>
+
+
+
+      <!--Chinese Cuisine-->
+      <div class="tab-pane fade" id="nav-Chinese-Cuisine" role="tabpanel" aria-labelledby="nav-Chinese-Cuisine-tab"
+        tabindex="0">
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes kuey-teow" value="kuey-teow">
+          <span class="align-top recipe-title">CHAR KUEY TEOW</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg"
+              alt="Char Kuey Teow">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Stir-fried flat rice noodles with prawns, eggs, and bean sprouts in a savory soy sauce.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>20 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes dumpling" value="dumpling">
+          <span class="align-top recipe-title">DUMPLING</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/98/34/5/miRF3sziTM6PBzAJlBCx_dumplings-1.jpg"
+              alt="Dumpling">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Steamed or fried dough pockets filled with a mixture of meat, vegetables, and seasonings.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>15 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes youtiao" value="youtiao">
+          <span class="align-top recipe-title">YOU TIAO</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://asianinspirations.com.au/wp-content/uploads/2021/05/R02741-Chinese-Fried-Dough-(Youtiao)2.jpg"
+              alt="You Tiao">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Crispy, deep-fried Chinese dough sticks, typically served with soy milk or congee.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>20 - 30 minutes</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+
+
+      <!--Indian Cuisine-->
+      <div class="tab-pane fade" id="nav-Indian-Cuisine" role="tabpanel" aria-labelledby="nav-Indian-Cuisine-tab"
+        tabindex="0">
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes biryani" value="biryani">
+          <span class="align-top recipe-title">BIRYANI</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-danger text-black">Hard</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://glebekitchen.com/wp-content/uploads/2019/12/chickenbiryanibowltop-500x375.jpg" alt="Biryani">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A fragrant rice dish with layers of spiced meat or vegetables, and aromatic herbs.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>45 minutes - 1 hour</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes chicken-tikka-masala"
+          value="chicken-tikka-masala">
+          <span class="align-top recipe-title">Chicken Tikka Masala</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG"
+              alt="Chicken Tikka Masala">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Grilled chicken pieces in a rich and creamy tomato-based sauce with spices.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>45 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes roti-canai"
+          value="roti-canai">
+          <span class="align-top recipe-title">ROTI CANAI</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://www.rotinrice.com/wp-content/uploads/2011/04/RotiCanai-1.jpg"
+              alt="Roti Canai">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A flaky, buttery Malaysian flatbread with a crisp texture, often enjoyed with curry or dhal.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 - 15 minutes</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <!--Add to Favourite-->
+      <div class="tab-pane fade" id="nav-starred" role="tabpanel" aria-labelledby="nav-starred" tabindex="0">
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes nasi-lemak"
+          value="nasi-lemak">
+          <span class="align-top recipe-title">NASI LEMAK</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.seriouseats.com/thmb/jurw_XoUko0sLM17lhIWseKvsyM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230309-NasiLemak-MichelleYip-Option1-8d0b9468c998495f91ef4ff6d3b5ab6b.jpg"
+              alt="Nasi Lemak">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Fragrant coconut rice served with sambal, fried crispy anchovies, roasted peanuts, boiled egg, and
+                cucumber.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>30 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes kuey-teow" value="kuey-teow">
+          <span class="align-top recipe-title">CHAR KUEY TEOW</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg"
+              alt="Char Kuey Teow">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Stir-fried flat rice noodles with prawns, eggs, and bean sprouts in a savory soy sauce.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>20 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes rojak" value="rojak">
+          <span class="align-top recipe-title">ROJAK</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://apicms.mstar.com.my/uploads/images/2023/10/02/2312962.jpg" alt="Rojak">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A tangy and spicy fruit and vegetable salad with a sweet, savory sauce.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 minutes</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes cendol" value="cendol">
+          <span class="align-top recipe-title">CENDOL</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://cdn1.npcdn.net/images/170188161551eed7afcbdbd187082c098cbc45351c.webp?md5id=f31c62b1be87ee00a16b9e51482263a7&new_width=1000&new_height=1000&size=max&w=-62170008925&from=png"
+              alt="Cendol">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A refreshing dessert with shaved ice, coconut milk, and sweet palm sugar syrup.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 minutes</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes dumpling" value="dumpling">
+          <span class="align-top recipe-title">DUMPLING</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-info text-black">Easy</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/98/34/5/miRF3sziTM6PBzAJlBCx_dumplings-1.jpg"
+              alt="Dumpling">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Steamed or fried dough pockets filled with a mixture of meat, vegetables, and seasonings.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>15 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes biryani" value="biryani">
+          <span class="align-top recipe-title">BIRYANI</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-danger text-black">Hard</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://glebekitchen.com/wp-content/uploads/2019/12/chickenbiryanibowltop-500x375.jpg" alt="Biryani">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A fragrant rice dish with layers of spiced meat or vegetables, and aromatic herbs.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>45 minutes - 1 hour</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes chicken-tikka-masala"
+          value="chicken-tikka-masala">
+          <span class="align-top recipe-title">Chicken Tikka Masala</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG"
+              alt="Chicken Tikka Masala">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Grilled chicken pieces in a rich and creamy tomato-based sauce with spices.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>45 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes youtiao" value="youtiao">
+          <span class="align-top recipe-title">YOU TIAO</span>
+          <span class="badge text-bg-warning text-black">Chinese</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://asianinspirations.com.au/wp-content/uploads/2021/05/R02741-Chinese-Fried-Dough-(Youtiao)2.jpg"
+              alt="You Tiao">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Crispy, deep-fried Chinese dough sticks, typically served with soy milk or congee.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>20 - 30 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes roti-canai"
+          value="roti-canai">
+          <span class="align-top recipe-title">ROTI CANAI</span>
+          <span class="badge text-bg-primary text-black">Indian</span>
+          <span class="badge text-bg-secondary text-black">Intermediate</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic" src="https://www.rotinrice.com/wp-content/uploads/2011/04/RotiCanai-1.jpg"
+              alt="Roti Canai">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>A flaky, buttery Malaysian flatbread with a crisp texture, often enjoyed with curry or dhal.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>10 - 15 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid border border-5 border-secondary rounded-3 p-2 recipes rendang" value="rendang">
+          <span class="align-top recipe-title">RENDANG</span>
+          <span class="badge text-bg-success text-black">Malay</span>
+          <span class="badge text-bg-danger text-black">Hard</span>
+          <span class="float-right">
+            <i class="bi bi-star star-deactive" data-bs-toggle="tooltip" data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip" data-bs-title="Add To Favourite" alt="no-starred"></i>
+          </span>
+          <hr>
+          <div class="recipeProperties">
+            <img class="recipe-pic"
+              src="https://www.astronauts.id/blog/wp-content/uploads/2023/03/Resep-Rendang-Daging-Sapi-Untuk-Lebaran-Gurih-dan-Nikmat-1024x683.jpg"
+              alt="Rendang">
+            <div class="recipeInfo">
+              <p><strong>Description:</strong></p>
+              <p>Rendang is a flavorful, slow-cooked beef stew made with coconut milk and a blend of spices, resulting
+                in tender, aromatic meat.</p>
+              <p><strong>Average Cooktime:</strong></p>
+              <p>2.5 - 3 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="home.html">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html">About Us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="feedback.html">Feedback</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Features</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="recipe.html">Recipe</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="tips.html">Tips</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="store.html">Store</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="contactus.html">Inquiry</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              1072, Jalan Seksyen 1/2<br>
+              31900 Kampar<br>
+              Perak<br>
+              Malaysia<br><br>
+              <strong>Phone:</strong> +60 18674 8743<br>
+              <strong>Email:</strong> imcooked@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About I'M COOKED</h3>
+            <p>A recipe website offering a wide range of culinary inspiration and kitchen tips. Featuring a collection
+              of
+              recipes that cater to all dietary preferences and skill levels. Bringing together flavors from around the
+              world, celebrating the diversity of cuisine and the joy of cooking for everyone.
+            </p>
+            <div class="social-links mt-4">
+              <a href="https://twitter.com/" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>2024 I'M COOKED!</span></strong> All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="myBtn" class="back-to-top" title="Go to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="recipe.js"></script>
+  <script src="nav.js"></script>
+  <script src="btop.js"></script>
+</body>
+
+</html>

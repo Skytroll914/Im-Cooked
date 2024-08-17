@@ -1,0 +1,67 @@
+.recipe-img {
+    width: 100%;
+    height: auto;
+}
+
+.video-popup {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.feature {
+    margin-bottom: 20px;
+    width: 70px;
+}
+
+.toasty {
+    float: right;
+}
+
+.video-area {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.recipe-section {
+    display: none;
+}
+
+#return{
+    margin-top: 50px;
+    margin-left: 50px;
+    border-radius: 0;
+}
+
+#return:hover{
+    border-bottom: 3px solid orange;
+}
+
+#return ::after {
+    opacity: 0;
+    transition: 0.4s;
+    height: 2px;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#return :hover ::after {
+    opacity: 1;
+}
+
+.container img{
+    transition: 0.5s;
+}
+
+.container img:hover{
+    transform: scale(1.03);
+}

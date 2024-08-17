@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="store.css">
+    <link rel="stylesheet" href="btop.css">
+    <link rel="stylesheet" href="footers.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html"><img class="logo" src="logo.jpeg" alt="I'M COOKED!"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item box">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="recipe.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tips.html">Tips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="store.html">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+
+                </ul>
+                <!--INSERT PREFERENCE SETTING-->
+                <div class="row justify-content-center mt-4 toggledarklight">
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                        <i class="bi bi-moon-stars"></i>
+                        <i class="bi bi-sun"></i>
+                        <span class="ball"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cookieconsent2" tabindex="-1" aria-labelledby="cookieconsentLabel2"
+            aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="cookieconsentLabel2">Cookies & Privacy</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-3 d-flex align-items-center justify-content-center">
+                                <i class="bi bi-cookie h1 text-primary"></i>
+                            </div>
+
+                            <div class="col-9">
+                                <p>This website uses cookies to ensure you get the best experience on our website.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="rejectBtn" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-outline-primary" data-mdb-dismiss="modal">Reject</button>
+                        <button type="button" id="acceptBtn" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-primary" data-mdb-dismiss="modal">
+                            Accept
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+    </nav>
+    <hr>
+    <header class=" text-center py-3">
+        <h1 class="extra-font">~ Welcome to the Store! ~</h1>
+    </header>
+    <hr>
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="CookBookImg/CookBook1.jpg" class="d-block cookbook" alt="CookBook Vol. 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="CookBookImg/CookBook2.jpg" class="d-block cookbook" alt="CookBook Vol. 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="CookBookImg/CookBook3.jpg" class="d-block cookbook" alt="CookBook Vol. 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+
+                <div class="card-body text-start">
+                    <h2 class="card-title h1">Cookbooks</h2>
+                    <hr>
+                    <p>Discover a treasure trove of culinary inspiration with our exclusive collection of cookbooks.
+                        Each volume is a curated masterpiece, brimming with recipes that range from traditional
+                        favorites to innovative creations. Whether you are a novice cook looking to build your skills or
+                        a seasoned chef seeking fresh ideas, our cookbooks offer something for everyone. With detailed
+                        instructions, vibrant photography, and insightful tips, these books are designed to guide you
+                        through every step of the cooking process, ensuring success and satisfaction in your kitchen
+                        adventures.</p>
+                    <p>
+
+                        Our cookbooks also delve into the cultural and historical backgrounds of various dishes,
+                        enriching your culinary experience with fascinating stories and traditions. Perfect for gifting
+                        or adding to your personal library, these volumes are more than just recipe collections—they are
+                        invitations to explore new flavors, techniques, and the joy of cooking. Take your culinary
+                        journey to new heights with our meticulously crafted cookbooks, and transform everyday meals
+                        into extraordinary experiences.</p>
+                    <button class="buybooks" onclick="window.location.href='cookbook-form.html'"><span> Purchase
+                            Cookbooks</span></button>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <br><br>
+        <div class="row">
+
+            <div class="col-md-6 mb-4">
+
+                <div id="carouselAutoplaying2" class="carousel car2 slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4"
+                                class="d-block cookbook-course" alt="Satisfied Customer">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://yorkmix.com/wp-content/uploads/2019/03/york-cookery-school-grand-3-1300x867.jpg"
+                                class="d-block cookbook-course" alt="Kitchen">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://goodfoodstudioza.com/wp-content/uploads/2023/06/IMG_9243.jpg"
+                                class="d-block cookbook-course" alt="Satisfied Customer 2">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying2"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying2"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 mb-4">
+
+                <div class="text-start cook-course">
+                    <h2 class="">Cooking Courses</h2>
+                    <hr>
+                    <p>Elevate your culinary skills with our hands-on cooking courses. Designed for all levels, from
+                        beginners to advanced home cooks, our courses offer a comprehensive learning experience covering
+                        a wide range of techniques and cuisines. Led by expert chefs, each course provides practical,
+                        step-by-step guidance, helping you master cooking with confidence. Whether you're refining your
+                        knife skills, exploring international dishes, or diving into pastry making, our courses equip
+                        you with the knowledge and skills to excel in the kitchen.</p>
+                    <p>Our courses go beyond just cooking—they deepen your understanding of ingredients, flavors, and
+                        the cultural contexts that shape the culinary world. Engage in a dynamic learning environment
+                        where you can ask questions, experiment, and receive personalized feedback. By the end of each
+                        course, you will not only have new recipes to try but also the confidence to innovate in your
+                        own
+                        kitchen. Join our cooking courses today and embark on a journey of culinary discovery that will
+                        inspire you for years to come.</p>
+                    <button class="registercourse" onclick="window.location.href='courseregister.html'"><span>Register
+                            for
+                            Courses</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="home.html">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html">About Us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="recipe.html">Recipe</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="tips.html">Tips</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="store.html">Store</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="contactus.html">Inquiry</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            1072, Jalan Seksyen 1/2<br>
+                            31900 Kampar<br>
+                            Perak<br>
+                            Malaysia<br><br>
+                            <strong>Phone:</strong> +60 18674 8743<br>
+                            <strong>Email:</strong> imcooked@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>About I'M COOKED</h3>
+                        <p>A recipe website offering a wide range of culinary inspiration and kitchen tips. Featuring a
+                            collection of
+                            recipes that cater to all dietary preferences and skill levels. Bringing together flavors
+                            from around the
+                            world, celebrating the diversity of cuisine and the joy of cooking for everyone.
+                        </p>
+                        <div class="social-links mt-4">
+                            <a href="https://twitter.com/" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>2024 I'M COOKED!</span></strong> All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <button onclick="topFunction()" id="myBtn" class="back-to-top" title="Go to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="nav.js"></script>
+    <script src="btop.js"></script>
+</body>
+
+</html>

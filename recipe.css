@@ -1,0 +1,127 @@
+.selection {
+    display: none;
+}
+
+.all {
+    display: block;
+}
+
+.title {
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipeDescription {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipeDescription img {
+    width: 25%;
+    height: 10%;
+    border-radius: 15px;
+    box-shadow: 5px 5px #888888;
+}
+
+.recipeIntro p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 100%;
+    margin: 2% 15%;
+}
+
+.recipeDisplay {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.star-active {
+    width: 20px;
+    float: right;
+}
+
+.star-deactive {
+    width: 20px;
+    float: right;
+}
+
+h2+.star-active {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 30px;
+}
+
+.favourite {
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipes {
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.recipes:hover {
+    transform: scale(1.05);
+}
+
+#nav-ALL :hover {
+    cursor: pointer;
+}
+
+#nav-Malay-Cuisine :hover {
+    cursor: pointer;
+}
+
+#nav-Chinese-Cuisine :hover {
+    cursor: pointer;
+}
+
+#nav-Indian-Cuisine :hover {
+    cursor: pointer;
+}
+
+#nav-starred :hover {
+    cursor: pointer;
+}
+
+.recipe-title {
+    margin: 15px;
+    font-size: 20px;
+    font-weight: 1000;
+
+}
+
+.recipe-pic {
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 3px 3px black;
+    display: inline-block;
+}
+
+.recipeProperties {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.recipeInfo {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.recipe-desc-title {
+    font-family: "Matemasie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+

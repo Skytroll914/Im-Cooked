@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Recipe Page - I'm Cooked</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="showWholeRecipe.css">
+    <link rel="stylesheet" href="btop.css">
+    <link rel="stylesheet" href="footers.css">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html"><img class="logo" src="logo.jpeg" alt="I'M COOKED!"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item box">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="recipe.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tips.html">Tips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="store.html">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+
+                </ul>
+                <!--INSERT PREFERENCE SETTING-->
+                <div class="row justify-content-center mt-4 toggledarklight">
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                        <i class="bi bi-moon-stars"></i>
+                        <i class="bi bi-sun"></i>
+                        <span class="ball"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="cookieconsent2" tabindex="-1" aria-labelledby="cookieconsentLabel2"
+            aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="cookieconsentLabel2">Cookies & Privacy</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-3 d-flex align-items-center justify-content-center">
+                                <i class="bi bi-cookie h1 text-primary"></i>
+                            </div>
+
+                            <div class="col-9">
+                                <p>This website uses cookies to ensure you get the best experience on our website.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="rejectBtn" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-outline-primary" data-mdb-dismiss="modal">Reject</button>
+                        <button type="button" id="acceptBtn" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-primary" data-mdb-dismiss="modal">
+                            Accept
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+    </nav>
+
+    <button type="button" class="btn fw-bold return" id="return">
+        <h5><i class="bi bi-arrow-return-left"></i> Back</h5>
+    </button>
+
+    <div class="container mt-5 nasi-lemak recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://www.seriouseats.com/thmb/jurw_XoUko0sLM17lhIWseKvsyM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230309-NasiLemak-MichelleYip-Option1-8d0b9468c998495f91ef4ff6d3b5ab6b.jpg"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#NasiLemak">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="NasiLemak" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/ULXXPGl-39k?si=xWJ8ZFdS8y0ZVaeK"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Nasi_Lemak.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Nasi Lemak</h1>
+                <p>Nasi Lemak is a traditional Malaysian dish, often considered the national dish. It consists of
+                    fragrant rice cooked in coconut milk, served with sambal, crispy anchovies, toasted peanuts, boiled
+                    egg, and cucumber slices.</p>
+                <p><strong>Cook Time:</strong> 30 minutes</p>
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>2 cups of jasmine rice</li>
+                    <li>1 cup of coconut milk</li>
+                    <li>1 cup of water</li>
+                    <li>2 pandan leaves, tied into a knot</li>
+                    <li>1/2 tsp salt</li>
+                    <li>1/2 cup dried anchovies (ikan bilis), cleaned</li>
+                    <li>1/4 cup roasted peanuts</li>
+                    <li>4 boiled eggs, halved</li>
+                    <li>1 cucumber, sliced</li>
+                    <li>2 tablespoons oil</li>
+                    <li>Salt to taste</li>
+                </ul>
+
+                <h3>For the Sambal:</h3>
+                <ul class="ingredients-list">
+                    <li>1/2 cup dried chili peppers, soaked in warm water</li>
+                    <li>2 cloves garlic</li>
+                    <li>2 shallots</li>
+                    <li>1 tablespoon shrimp paste (belacan)</li>
+                    <li>1 tablespoon tamarind paste, mixed with 1/4 cup water</li>
+                    <li>1 tablespoon sugar</li>
+                    <li>Salt to taste</li>
+                    <li>2 tablespoons oil</li>
+                </ul>
+
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>Rinse the rice under cold water until the water runs clear.</li>
+                    <li>In a rice cooker, add the rinsed rice, coconut milk, water, salt, and pandan leaves. Cook until
+                        the rice is done.</li>
+                    <li>For the sambal, blend the soaked chili peppers, garlic, shallots, and shrimp paste into a smooth
+                        paste.</li>
+                    <li>Heat oil in a pan and fry the chili paste over medium heat until fragrant. Add tamarind juice,
+                        sugar, and salt, and cook until the sambal thickens.</li>
+                    <li>Fry the cleaned anchovies in hot oil until crispy, then set aside.</li>
+                    <li>To serve, plate the coconut rice and top with sambal, crispy anchovies, roasted peanuts, boiled
+                        eggs, and cucumber slices.</li>
+                    <li>Enjoy your Nasi Lemak with a side of extra sambal for an added kick!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5 kuey-teow recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#KeuyTeow">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="KeuyTeow" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/n-fFtPbTGHk?si=Tozgwr5ccCMiQGY6"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Char_Kuey_Teow.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Char Kuey Teow</h1>
+                <p>A popular Malaysian street food, Char Kuey Teow is a stir-fried flat noodle dish with shrimp, eggs,
+                    Chinese sausage, and chives, flavored with a mix of soy sauce and chili paste.</p>
+                <p><strong>Cook Time:</strong> 20 minutes</p>
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>200g flat rice noodles (kuey teow)</li>
+                    <li>100g shrimp, peeled and deveined</li>
+                    <li>50g Chinese sausage, thinly sliced</li>
+                    <li>2 cloves garlic, minced</li>
+                    <li>2 eggs, lightly beaten</li>
+                    <li>50g bean sprouts</li>
+                    <li>2 tablespoons soy sauce</li>
+                    <li>1 tablespoon chili paste</li>
+                    <li>1 tablespoon fish sauce</li>
+                    <li>2 tablespoons oil</li>
+                    <li>Chopped chives for garnish</li>
+                    <li>Salt and pepper to taste</li>
+                </ul>
+
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>Heat oil in a wok over medium heat. Add minced garlic and stir-fry until fragrant.</li>
+                    <li>Add shrimp and Chinese sausage to the wok and cook until the shrimp turns pink.</li>
+                    <li>Push the shrimp and sausage to one side of the wok, then pour in the beaten eggs and scramble
+                        until just set.</li>
+                    <li>Add the flat rice noodles to the wok, stirring everything together.</li>
+                    <li>Mix in soy sauce, chili paste, and fish sauce, ensuring the noodles are well-coated.</li>
+                    <li>Toss in the bean sprouts and stir-fry for another 2-3 minutes.</li>
+                    <li>Season with salt and pepper to taste, then garnish with chopped chives before serving.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 rojak recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://apicms.mstar.com.my/uploads/images/2023/10/02/2312962.jpg" alt="Delicious Food"
+                    class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#rojak">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="rojak" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/a-pdLrJBjdU?si=9Aq7MnHuGBWA9bci"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Rojak.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Rojak</h1>
+                <p>Rojak is a popular Malaysian and Indonesian fruit and vegetable salad dish, known for its sweet and
+                    tangy sauce. It's a delightful mix of textures and flavors, often enjoyed as a snack or a light
+                    meal.</p>
+                <p><strong>Cook Time:</strong> 10 minutes</p>
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>1 cucumber, cut into bite-sized pieces</li>
+                    <li>1 jicama, peeled and cut into matchsticks</li>
+                    <li>1 pineapple, peeled and cut into chunks</li>
+                    <li>1 green apple, sliced</li>
+                    <li>1 mango, peeled and sliced</li>
+                    <li>1/2 cup tofu puffs, sliced</li>
+                    <li>1/4 cup roasted peanuts, coarsely ground</li>
+                    <li>1 tablespoon sesame seeds, toasted</li>
+                </ul>
+
+                <h3>For the Dressing:</h3>
+                <ul class="ingredients-list">
+                    <li>3 tablespoons shrimp paste (belacan)</li>
+                    <li>2 tablespoons tamarind paste</li>
+                    <li>3 tablespoons palm sugar, grated</li>
+                    <li>1 tablespoon chili paste (optional)</li>
+                    <li>1/4 cup water</li>
+                    <li>Salt to taste</li>
+                </ul>
+
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>In a bowl, combine the shrimp paste, tamarind paste, palm sugar, chili paste (if using), and
+                        water. Mix until smooth and well combined.</li>
+                    <li>In a large mixing bowl, toss together the cucumber, jicama, pineapple, green apple, mango, and
+                        tofu puffs.</li>
+                    <li>Pour the dressing over the salad and toss until everything is evenly coated.</li>
+                    <li>Sprinkle the salad with roasted peanuts and toasted sesame seeds.</li>
+                    <li>Serve immediately and enjoy your refreshing Rojak!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 cendol recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://cdn1.npcdn.net/images/170188161551eed7afcbdbd187082c098cbc45351c.webp?md5id=f31c62b1be87ee00a16b9e51482263a7&new_width=1000&new_height=1000&size=max&w=-62170008925&from=png"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#cendol">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="cendol" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/S-MtwWEIJYg?si=eJ_MEWdf99c-bwSS"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Cendol.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Cendol</h1>
+                <p>This recipe focuses on the cendol jelly itself, not the entire dessert. You'll need to prepare
+                    coconut milk, gula melaka syrup, and shaved ice separately to complete the dish.</p>
+                <p>Cook Time: 20 minutes</p>
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>100g mung bean starch</li>
+                    <li>100g water</li>
+                    <li>1/2 tsp alkaline water (optional)</li>
+                    <li>Pandan extract or juice (for color)</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>In a bowl, combine mung bean starch, water, and pandan extract. Mix until smooth.</li>
+                    <li>If using alkaline water, add it now and mix well.</li>
+                    <li>Bring a pot of water to a boil.</li>
+                    <li>Slowly pour the mung bean starch mixture into the boiling water while stirring constantly.</li>
+                    <li>Reduce heat and continue stirring until the mixture thickens and becomes translucent.</li>
+                    <li>Transfer the mixture to a piping bag fitted with a small nozzle.</li>
+                    <li>Pipe the mixture into a bowl of ice water to form cendol strands.</li>
+                    <li>Rinse the cendol strands with cold water to remove excess starch.</li>
+                    <li>Serve immediately or store in the refrigerator until ready to use.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 dumpling recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/98/34/5/miRF3sziTM6PBzAJlBCx_dumplings-1.jpg"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#dumpling">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="dumpling" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/EKltq6jpFvk?si=0rxhkLVgImXwosiN"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Dumplings.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Dumpling</h1>
+                <p>This recipe focuses on the dumpling wrapper and a basic pork and vegetable filling. You can
+                    customize the filling to your preference.</p>
+                <p>Cook Time: 30 minutes</p>
+                <h3>Ingredients for Wrapper:</h3>
+                <ul class="ingredients-list">
+                    <li>2 cups all-purpose flour</li>
+                    <li>1 cup hot water</li>
+                    <li>1 tablespoon oil</li>
+                </ul>
+                <h3>Ingredients for Filling:</h3>
+                <ul class="ingredients-list">
+                    <li>300g ground pork</li>
+                    <li>1/2 cup chopped cabbage</li>
+                    <li>1/4 cup chopped carrots</li>
+                    <li>1/4 cup chopped onions</li>
+                    <li>1 tablespoon soy sauce</li>
+                    <li>1 teaspoon sesame oil</li>
+                    <li>Salt and pepper to taste</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <h4>For the wrapper:</h4>
+                <ol class="instructions-list">
+                    <li>In a large bowl, combine flour and hot water. Stir until a dough forms.</li>
+                    <li>Knead the dough for about 5 minutes until smooth and elastic.</li>
+                    <li>Cover the dough with a damp cloth and let it rest for 30 minutes.</li>
+                    <li>Divide the dough into equal-sized balls.</li>
+                    <li>Roll out each ball into a thin circle using a rolling pin.</li>
+                </ol>
+                <h4>For the filling:</h4>
+                <ol class="instructions-list">
+                    <li>In a bowl, combine ground pork, cabbage, carrots, onions, soy sauce, sesame oil, salt, and
+                        pepper. Mix well.</li>
+                </ol>
+                <h4>To assemble dumplings:</h4>
+                <ol class="instructions-list">
+                    <li>Place a spoonful of filling in the center of each wrapper.</li>
+                    <li>Fold the wrapper into half and press the edges together to seal.</li>
+                    <li>Crimp the edges to create decorative patterns (optional).</li>
+                </ol>
+                <h4>To cook dumplings:</h4>
+                <p>You can boil, steam, or pan-fry the dumplings according to your preference.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 biryani recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://glebekitchen.com/wp-content/uploads/2019/12/chickenbiryanibowltop-500x375.jpg"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#biryani">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="biryani" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/95BCU1n268w?si=9As9P4qeAF3jsNOJ"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Biryani.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Briyani</h1>
+                <p>Note: This is a simplified version of briyani. For a more authentic flavor, consider using a biryani
+                    spice blend and additional ingredients like saffron and kewra water.</p>
+                <p>Cook Time: 1 hour</p>
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>1 kg chicken, cut into pieces</li>
+                    <li>1 cup basmati rice</li>
+                    <li>2 large onions, sliced</li>
+                    <li>3 cloves garlic, minced</li>
+                    <li>1-inch piece ginger, minced</li>
+                    <li>2 green chilies, slit</li>
+                    <li>2 bay leaves</li>
+                    <li>4 cloves</li>
+                    <li>2 cardamom pods</li>
+                    <li>1 cinnamon stick</li>
+                    <li>1 teaspoon garam masala</li>
+                    <li>1 teaspoon turmeric powder</li>
+                    <li>1 teaspoon coriander powder</li>
+                    <li>1 teaspoon cumin powder</li>
+                    <li>Salt to taste</li>
+                    <li>Oil</li>
+                    <li>Yogurt (for marinating chicken)</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>Marinate chicken pieces in yogurt, ginger, garlic, and salt for at least 30 minutes.</li>
+                    <li>Heat oil in a large pot. Add bay leaves, cloves, cardamom, and cinnamon.</li>
+                    <li>Add onions and sauté until golden brown.</li>
+                    <li>Add marinated chicken and cook until browned on all sides.</li>
+                    <li>Add ginger, garlic, green chilies, and spices (garam masala, turmeric, coriander, cumin).</li>
+                    <li>Add enough water to cover the chicken and bring to a boil.</li>
+                    <li>Reduce heat and simmer until chicken is cooked through.</li>
+                    <li>Rinse basmati rice and soak in water for 30 minutes.</li>
+                    <li>Drain the rice and add it to the chicken pot.</li>
+                    <li>Increase heat and bring to a boil.</li>
+                    <li>Cover the pot and reduce heat to low. Simmer until rice is cooked and water is absorbed.</li>
+                    <li>Fluff the rice with a fork and serve hot.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 chicken-tikka-masala recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#chicken-tikka-masala">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="chicken-tikka-masala" data-bs-backdrop="static"
+                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/HMfUsS9zeuw?si=98SkQ2azi4YAz1U-"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Chicken_Tik_Masala.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Chicken Tikka Masala</h1>
+                <p>Chicken Tikka Masala is a popular Indian dish known for its creamy, spiced tomato sauce. It features
+                    tender pieces of marinated chicken, making it a favorite around the world.</p>
+                <p><strong>Cook Time:</strong> 45 minutes</p>
+
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>500g chicken breast, cut into bite-sized pieces</li>
+                    <li>1 cup plain yogurt</li>
+                    <li>2 tablespoons lemon juice</li>
+                    <li>2 tablespoons vegetable oil</li>
+                    <li>2 teaspoons ground cumin</li>
+                    <li>2 teaspoons paprika</li>
+                    <li>1 teaspoon ground coriander</li>
+                    <li>1 teaspoon turmeric</li>
+                    <li>1 teaspoon garam masala</li>
+                    <li>1 teaspoon ground black pepper</li>
+                    <li>1 onion, finely chopped</li>
+                    <li>2 garlic cloves, minced</li>
+                    <li>1-inch piece of ginger, grated</li>
+                    <li>1 can (400g) tomato puree</li>
+                    <li>1 cup heavy cream</li>
+                    <li>Salt to taste</li>
+                    <li>Fresh cilantro, for garnish</li>
+                </ul>
+
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>In a bowl, combine yogurt, lemon juice, oil, cumin, paprika, coriander, turmeric, garam masala,
+                        and black pepper. Add the chicken pieces and marinate for at least 30 minutes, preferably
+                        overnight.</li>
+                    <li>In a large pan, heat oil over medium heat. Add onion, garlic, and ginger, and sauté until the
+                        onion is soft and translucent.</li>
+                    <li>Add the marinated chicken to the pan and cook until the chicken is browned on all sides.</li>
+                    <li>Stir in the tomato puree and cook for 10 minutes, allowing the flavors to meld.</li>
+                    <li>Reduce the heat and add the heavy cream, stirring until the sauce is smooth and creamy.</li>
+                    <li>Simmer for another 10 minutes, adding salt to taste.</li>
+                    <li>Garnish with fresh cilantro and serve hot with rice or naan bread.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 youtiao recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://asianinspirations.com.au/wp-content/uploads/2021/05/R02741-Chinese-Fried-Dough-(Youtiao)2.jpg"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#youtiao">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="youtiao" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/r3lfns1vvAw?si=3YVzdlsQuNN3RTu0"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/You_Tiao.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>You Tiao</h1>
+                <p>You Tiao, also known as Chinese crullers or doughnuts, are long, golden-brown strips of fried dough,
+                    often enjoyed as a breakfast snack or served alongside congee or soy milk.</p>
+                <p><strong>Cook Time:</strong> 30 minutes (plus resting time)</p>
+
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>2 cups all-purpose flour</li>
+                    <li>1 teaspoon baking powder</li>
+                    <li>1/2 teaspoon baking soda</li>
+                    <li>1/2 teaspoon salt</li>
+                    <li>1 teaspoon sugar</li>
+                    <li>3/4 cup water</li>
+                    <li>2 tablespoons vegetable oil</li>
+                    <li>Oil for frying</li>
+                </ul>
+
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>In a bowl, mix flour, baking powder, baking soda, salt, and sugar.</li>
+                    <li>Add water and vegetable oil to the dry ingredients. Mix until a dough forms.</li>
+                    <li>Knead the dough for 5-7 minutes until smooth. Cover with a damp cloth and let it rest for at
+                        least 2 hours.</li>
+                    <li>Roll the dough into a long strip and cut it into 1-inch wide pieces.</li>
+                    <li>Take two pieces of dough and stack them on top of each other. Press a chopstick lengthwise in
+                        the center to make them stick together.</li>
+                    <li>Heat oil in a deep pan. Stretch the dough pieces slightly before frying them in hot oil until
+                        golden brown on both sides.</li>
+                    <li>Remove and drain on paper towels. Serve warm.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 rendang recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://www.astronauts.id/blog/wp-content/uploads/2023/03/Resep-Rendang-Daging-Sapi-Untuk-Lebaran-Gurih-dan-Nikmat-1024x683.jpg"
+                    alt="Delicious Food" class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#rendang">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="rendang" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/l76CNoIYFkQ?si=E9Nj8L6g6Kqkmw7g"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Rendang.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Rendang</h1>
+                <p>Rendang is a rich and flavorful Indonesian dish made with slow-cooked beef, coconut milk, and a blend
+                    of spices. It is a classic dish known for its tender meat and aromatic flavors.</p>
+                <p><strong>Cook Time:</strong> 2-3 hours</p>
+
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>1 kg beef, cut into cubes</li>
+                    <li>2 cans (800ml) coconut milk</li>
+                    <li>3 tablespoons vegetable oil</li>
+                    <li>2 stalks lemongrass, bruised</li>
+                    <li>4 kaffir lime leaves</li>
+                    <li>2 turmeric leaves (optional)</li>
+                    <li>Salt to taste</li>
+                    <li>Sugar to taste</li>
+                </ul>
+
+                <h3>For the Spice Paste:</h3>
+                <ul class="ingredients-list">
+                    <li>6 shallots</li>
+                    <li>4 garlic cloves</li>
+                    <li>2 inches ginger</li>
+                    <li>2 inches galangal</li>
+                    <li>5 dried chilies, soaked and deseeded</li>
+                    <li>2 teaspoons ground coriander</li>
+                    <li>1 teaspoon ground cumin</li>
+                    <li>1 teaspoon ground fennel</li>
+                </ul>
+
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>In a blender, combine all the ingredients for the spice paste and blend until smooth.</li>
+                    <li>In a large pot, heat oil and sauté the spice paste until fragrant.</li>
+                    <li>Add the beef cubes and cook until browned.</li>
+                    <li>Add coconut milk, lemongrass, kaffir lime leaves, turmeric leaves (if using), salt, and sugar.
+                        Stir well.</li>
+                    <li>Bring to a boil, then reduce the heat to a simmer. Cook uncovered for 2-3 hours, stirring
+                        occasionally, until the beef is tender and the sauce is thickened.</li>
+                    <li>Adjust seasoning with salt and sugar. Serve with steamed rice.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 roti-canai recipe-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://www.rotinrice.com/wp-content/uploads/2011/04/RotiCanai-1.jpg" alt="Delicious Food"
+                    class="recipe-img">
+                <button class="btn mt-3 feature copy-recipe-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Copy Recipe"><i
+                        class="bi bi-clipboard"></i></button>
+                <button class="btn mt-3 feature copy-link-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Share"><i class="bi bi-share"></i></button>
+                <span data-bs-toggle="modal" data-bs-target="#roti-canai">
+                    <button class="btn mt-3 feature play-video-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="Play Video"><i
+                            class="bi bi-play-btn"></i></button>
+                </span>
+                <button class="btn mt-3 feature play-speech-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip" data-bs-title="Play Text to Speech"><i
+                        class="bi bi-mic"></i></button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-xl" id="roti-canai" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Tutorial</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body video-area">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/f4OGNIt_S1I?si=YoKZpw1eZ0mBUF5K"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Toast for Audio Playback -->
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="audioToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Text to Speech</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <audio id="speechAudio" controls style="width: 100%;">
+                                <source src="Audio/Roti Canai.mp3" type="audio/mp3"> type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast for Copy -->
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Recipe has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                    <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-body">
+                            Web link has been saved to your clipboard!
+                            <button type="button" class="btn-close me-2 m-auto toasty" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Roti Canai</h1>
+                <p>Roti Canai is a popular Malaysian flatbread that is crispy on the outside and soft on the inside. It
+                    is typically served with curry or dhal as a delicious breakfast or snack.</p>
+                <p><strong>Cook Time:</strong> 1 hour (plus resting time)</p>
+
+                <h3>Ingredients:</h3>
+                <ul class="ingredients-list">
+                    <li>2 cups all-purpose flour</li>
+                    <li>1/2 teaspoon salt</li>
+                    <li>1 tablespoon sugar</li>
+                    <li>1/2 cup water</li>
+                    <li>1/4 cup condensed milk</li>
+                    <li>2 tablespoons melted butter or ghee</li>
+                    <li>Oil for cooking</li>
+                </ul>
+
+                <h3>Instructions:</h3>
+                <ol class="instructions-list">
+                    <li>In a bowl, mix flour, salt, and sugar. Add water, condensed milk, and melted butter. Knead to
+                        form a soft dough.</li>
+                    <li>Divide the dough into small balls. Coat each ball with oil and let them rest, covered, for at
+                        least 2 hours.</li>
+                    <li>On a greased surface, flatten each ball and stretch it thinly into a large circle without
+                        tearing.</li>
+                    <li>Fold the edges of the circle inward to form a square or roll it up and coil it into a spiral.
+                    </li>
+                    <li>Heat a griddle or pan with a little oil. Cook each roti on medium heat until golden brown on
+                        both sides, pressing with a spatula.</li>
+                    <li>Serve hot with curry or dhal.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="home.html">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html">About Us</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="recipe.html">Recipe</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="tips.html">Tips</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="store.html">Store</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="contactus.html">Inquiry</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            1072, Jalan Seksyen 1/2<br>
+                            31900 Kampar<br>
+                            Perak<br>
+                            Malaysia<br><br>
+                            <strong>Phone:</strong> +60 18674 8743<br>
+                            <strong>Email:</strong> imcooked@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>About I'M COOKED</h3>
+                        <p>A recipe website offering a wide range of culinary inspiration and kitchen tips. Featuring a
+                            collection of
+                            recipes that cater to all dietary preferences and skill levels. Bringing together flavors
+                            from around the
+                            world, celebrating the diversity of cuisine and the joy of cooking for everyone.
+                        </p>
+                        <div class="social-links mt-4">
+                            <a href="https://twitter.com/" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>2024 I'M COOKED!</span></strong> All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <button onclick="topFunction()" id="myBtn" class="back-to-top" title="Go to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="showWholeRecipe.js"></script>
+    <script src="nav.js"></script>
+    <script src="btop.js"></script>
+</body>
+
+</html>
